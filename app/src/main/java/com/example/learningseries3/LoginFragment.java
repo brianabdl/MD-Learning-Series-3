@@ -1,16 +1,15 @@
 package com.example.learningseries3;
 
 import android.os.Bundle;
-
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
 
 public class LoginFragment extends Fragment {
 
@@ -49,17 +48,21 @@ public class LoginFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         // Set the username and password to the TextView
+        TextView username = view.findViewById(R.id.username);
+        TextView password = view.findViewById(R.id.password);
+
         if (mUsername != null) {
-            TextView username = view.findViewById(R.id.username);
             username.setText(mUsername);
         }
 
         if (mPassword != null) {
-            TextView password = view.findViewById(R.id.password);
             password.setText(mPassword);
         }
 
         view.findViewById(R.id.btnLogin).setOnClickListener(v -> {
+            mUsername = username.getText().toString();
+            mPassword = password.getText().toString();
+
             if (isLoginValid(mUsername, mPassword)) {
                 HelloFragment helloFragment = HelloFragment.newInstance(mUsername);
                 ((MainActivity) requireActivity()).replaceFragment(helloFragment);
