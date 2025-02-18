@@ -68,6 +68,7 @@ public class LoginFragment extends Fragment {
                 Intent intent = new Intent(getContext(), HelloActivity.class);
                 intent.putExtra(ARG_USERNAME, mUsername);
                 startActivity(intent);
+                requireActivity().finish();
             } else {
                 Toast.makeText(getContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
             }
