@@ -1,5 +1,6 @@
 package com.example.learningseries3;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -64,8 +65,9 @@ public class LoginFragment extends Fragment {
             mPassword = password.getText().toString();
 
             if (isLoginValid(mUsername, mPassword)) {
-                HelloFragment helloFragment = HelloFragment.newInstance(mUsername);
-                ((MainActivity) requireActivity()).replaceFragment(helloFragment);
+                Intent intent = new Intent(getContext(), HelloActivity.class);
+                intent.putExtra(ARG_USERNAME, mUsername);
+                startActivity(intent);
             } else {
                 Toast.makeText(getContext(), "Invalid username or password", Toast.LENGTH_SHORT).show();
             }

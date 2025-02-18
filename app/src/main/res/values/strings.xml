@@ -2,4 +2,11 @@
     <string name="app_name">LearningSeries3</string>
     <string name="hello_world">Hello World!</string>
     <string name="hello_user">Hello %1$s!</string>
-</resources>
+    <string name="profile_picture">Profile Picture</string>
+    <string name="user_name">Lorem</string>
+    <string name="user_email">loremipsum@example.com</string>
+    <string name="user_description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
+    <string name="username_hint">Username</string>
+    <string name="password_hint">Password</string>
+    <string name="login">Login</string>
+    </resources>

@@ -15,7 +15,7 @@ public class HelloFragment extends Fragment {
     private static final String ARG_USERNAME = "username";
     private String mUsername;
 
-    private HelloFragment() {
+    public HelloFragment() {
         // Required empty public constructor
     }
 
@@ -38,8 +38,8 @@ public class HelloFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        TextView user = view.findViewById(R.id.txtHello);
-        user.setText(getString(R.string.hello_user, mUsername));
+        TextView user = view.findViewById(R.id.txtName);
+        user.setText(mUsername);
     }
 
     @Override
